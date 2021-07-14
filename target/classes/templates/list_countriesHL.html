@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	<table>
+		<tr th:each="country : ${keyContries}">
+			<td><a th:href="@{/getCountry/{id}(id=${country.id})}"> <span
+					th:text="${country.name}"></span>
+			</a></td>
+		</tr>
+	</table>
+	<a href="/countryApp/list_countries"> click here to see all countries</a> <br>
+		<a href="/countryApp/new"> click here to add new country</a> <br>
+</body>
+</html>

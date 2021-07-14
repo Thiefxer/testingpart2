@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/save}" th:object="${country}" method="post">
+
+Name: <input type="text" th:field="*{name}"/><br>
+<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"> Name Error</span> 
+
+Capital:<input type="text" th:field="*{capital}"/><br>
+<span th:if="${#fields.hasErrors('capital')}" th:errors="*{capital}"> Capital Error</span>
+
+Population:<input type="text" th:field="*{population}"/><br>
+<span th:if="${#fields.hasErrors('population')}" th:errors="*{population}"> Population Error</span>
+<button type="submit">Save</button>
+</form>
+</body>
+</html>

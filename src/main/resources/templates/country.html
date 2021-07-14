@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<table>
+<tr> Id   Country   Capital  Population</tr>
+<tr th:each="country : ${countries}">
+
+<td th:text ="${country.id}"> ID</td>
+<td th:text ="${country.name}"> Country</td>
+<td th:text ="${country.capital}"> Capital</td>
+<td th:text ="${country.population}"> Population</td>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<td> <a th:href="@{/edit/{id}(id=${country.id})}"> Edit</a>
+</tr>
+
+</table>      
+
+</html>
